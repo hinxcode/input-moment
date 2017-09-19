@@ -4,7 +4,7 @@
 
 .im-btn {
   display: inline-block;
-  background-color: #ffffff;
+  background-color: @color-white;
   border: 0;
   outline: 0;
   cursor: pointer;
@@ -16,11 +16,7 @@
 }
 
 .m-input-moment {
-  display: inline-block;
-  width: 330px;
   padding: 12px 15px;
-  border-radius: 3px;
-  border: 1px solid @color-gray;
 
   .options {
     width: 100%;
@@ -48,7 +44,7 @@
       }
 
       &.is-active {
-        color: #ffffff;
+        color: @color-white;
         background-color: @color-blue;
       }
     }
@@ -56,7 +52,6 @@
 
   .tab {
     display: none;
-    height: 310px;
 
     &.is-active {
       display: block;
@@ -69,13 +64,17 @@
 
   .btn-save {
     display: block;
-    margin-top: 10px;
     width: 100%;
-    background-color: @color-blue;
+    margin-top: 10px;
     padding: 12px 0;
     text-align: center;
-    color: #ffffff;
+    background-color: @color-blue;
+    color: @color-white;
     font-size: 16px;
     border-radius: 3px;
+
+    &:active {
+      background-color: @color-blue2;
+    }
   }
 }

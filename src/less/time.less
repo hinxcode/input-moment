@@ -2,7 +2,7 @@
 
 .m-time {
   color: @color-white;
-  padding-top: 50px;
+  padding: 25px 50px;
 
   .showtime {
     text-align: center;
@@ -10,13 +10,12 @@
 
   .separater {
     display: inline-block;
+    width: 32px;
     font-size: 32px;
     font-weight: bold;
-    color: @color-blue;
-    width: 32px;
-    height: 65px;
-    line-height: 65px;
+    color: @color-blue;    
     text-align: center;
+    vertical-align: middle;
   }
 
   .time-text {
@@ -28,20 +27,36 @@
     margin-bottom: 10px;
   }
 
-  .sliders {
-    padding: 0 10px;
+  .time-control {
+    display: inline-block;
+    width: 65px;    
+    vertical-align: middle;
+
+    .control-button {
+      border: 0;
+      background: none;
+      font-size: 25px;
+      color: @color-blue;
+      cursor: pointer;
+
+      &:active {
+        color: @color-blue2;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
   }
 
   .time {
-    width: 65px;
-    height: 65px;
-    display: inline-block;
+    width: 100%;
+    border: 0;
+    border-radius: 3px;
     font-size: 38px;
     line-height: 65px;
     color: @color-white;
     background-color: @color-blue;
-    border: 0;
-    border-radius: 3px;
     text-align: center;
   }
 }

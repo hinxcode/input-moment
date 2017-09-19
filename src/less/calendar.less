@@ -59,7 +59,7 @@
       width: 30px;
       height: 30px;
       line-height: 30px;
-      color: #ffffff;
+      color: @color-white;
       border: 1px solid @color-blue;
       border-radius: 50%;
       background: @color-blue;
@@ -69,6 +69,10 @@
       outline: 0;
       z-index: 5;
       cursor: pointer;
+
+      &:active {
+        background: @color-blue2;
+      }
     }
 
     .prev-month {
