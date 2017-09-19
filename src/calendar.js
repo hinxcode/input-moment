@@ -77,7 +77,7 @@ export default class Calendar extends Component {
               <tr key={w}>
                 {row.map(i =>
                   <Day
-                    key={i}
+                    key={`${w}-${i}`}
                     i={i}
                     d={d}
                     w={w}
