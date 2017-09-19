@@ -1,3 +1,4 @@
+import './less/input-moment.less';
 import cx from 'classnames';
 import React, { Component } from 'react';
 import Calendar from './calendar';
@@ -7,7 +8,10 @@ export default class InputMoment extends Component {
   static defaultProps = {
     prevMonthIcon: 'ion-ios-arrow-left',
     nextMonthIcon: 'ion-ios-arrow-right',
-    buttonTitle: 'Confirm'
+    dateTitle: 'Date',
+    timeTitle: 'Time',
+    buttonTitle: 'Confirm',
+    minuteStep: 1
   };
 
   state = {
@@ -32,7 +36,10 @@ export default class InputMoment extends Component {
       prevMonthIcon,
       nextMonthIcon,
       onSave,
+      dateTitle,
+      timeTitle,
       buttonTitle,
+      minuteStep,
       ...props
     } = this.props;
     const cls = cx('m-input-moment', className);
@@ -45,14 +52,14 @@ export default class InputMoment extends Component {
             className={cx('ion-calendar im-btn', { 'is-active': tab === 0 })}
             onClick={e => this.handleClickTab(e, 0)}
           >
-            Date
+            {dateTitle}
           </button>
           <button
             type="button"
             className={cx('ion-clock im-btn', { 'is-active': tab === 1 })}
             onClick={e => this.handleClickTab(e, 1)}
           >
-            Time
+            {timeTitle}
           </button>
         </div>
 
@@ -68,6 +75,7 @@ export default class InputMoment extends Component {
             className={cx('tab', { 'is-active': tab === 1 })}
             moment={m}
             onChange={this.props.onChange}
+            minuteStep={minuteStep}
           />
         </div>
 
